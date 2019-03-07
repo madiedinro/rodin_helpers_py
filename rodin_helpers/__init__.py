@@ -7,16 +7,18 @@ def show_link(url, title='Authorize'):
 def video(id):
     return YouTubeVideo(id, width=700, height=400)
 
-def walk(item, level=0, path=[]):
+def walk(item, level=0, path=[], limit_list=None):
     path_str = " > ".join(map(str, path))
     if isinstance(item, dict):
         print(f"[dict  {path_str}")
         for key, val in item.items():
-            walk(val, level+1, [*path, key])
+            walk(val, level+1, [*path, key], limit_list=limit_list)
     elif isinstance(item, list):
         print(f"[list  {path_str}")
         for i, val in enumerate(item):
-            walk(val, level+1, [*path, i])
+            walk(val, level+1, [*path, i], limit_list=limit_list)
+            if limit_list and i == limit_list:
+                break
     else:
         print(f'|      {path_str}={str(item)}')
 
