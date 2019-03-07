@@ -31,7 +31,7 @@ def print_rows(recods, limit=None):
     txt = '|'.join(cols)+'\n'
     txt += '|'.join(['---' for i in range(len(cols))])+'\n'
     for i, row in enumerate(recods):
-        txt += '|'.join([str(row.get(f)).replace('|', '&#124;') for f in cols])+'\n'
+        txt += '|'.join([str(row.get(f) or '-').replace('|', '&#124;') for f in cols])+'\n'
         if limit and limit <= i:
             break
     display(Markdown(txt))
