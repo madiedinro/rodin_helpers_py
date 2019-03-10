@@ -3,15 +3,14 @@
 
 ## Установка 
 
-```python
+```shell
 pip install -U git+https://github.com/madiedinro/rodin_helpers_py
 ```
-В jupyer перед командой добавляется префикс `!`
 
-Импорт
 ```python
 import rodin_helpers as rh
 ```
+В jupyer перед командой добавляется префикс `!`
 
 
 ## Вывод ссылки в заданном формате

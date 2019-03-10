@@ -1,6 +1,8 @@
 from IPython.core.display import display, HTML, Markdown
 from IPython.display import YouTubeVideo
 
+from . import ch
+
 def show_link(url, title='Authorize'):
     display(HTML(f'Click <a href="{url}" target="_blank">{title}</a> or open {url} in your browser'))
 
