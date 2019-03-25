@@ -29,7 +29,7 @@ def print_rows(recods, limit=None):
     """
     print_rows(['a', 'b'], [{'a':1, 'b':2}])
     """
-    cols = {c for record in recods for c in record.keys()}
+    cols = sorted({c for record in recods for c in record.keys()})
     txt = '|'.join(cols)+'\n'
     txt += '|'.join(['---' for i in range(len(cols))])+'\n'
     for i, row in enumerate(recods):
@@ -38,3 +38,12 @@ def print_rows(recods, limit=None):
             break
     display(Markdown(txt))
 
+
+def flatten_dict(dd, separator='.', prefix=''):
+    return {
+        prefix + separator + k if prefix else k: v
+        for kk, vv in dd.items()
+        for k, v in flatten_dict(vv, separator, kk).items()
+    } if isinstance(dd, dict) else {
+        prefix: dd
+    }
