@@ -1,10 +1,12 @@
 from simplech import ClickHouse
-from simplech.simplech import bytes_decoder, json_decoder
+from simplech import bytes_decoder, json_decoder
 from io import StringIO
 
 import pandas as pd
 
+
 ch = ClickHouse()
+
 
 def pd_wide(columns=250, rows=100, col_width=1000):
     pd.options.display.max_columns = columns
