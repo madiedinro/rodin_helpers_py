@@ -1,5 +1,7 @@
 from IPython.core.display import display, HTML, Markdown
 from IPython.display import YouTubeVideo
+from typing import Generator
+
 
 from . import ch
 
@@ -29,6 +31,8 @@ def print_rows(recods, limit=None):
     """
     print_rows(['a', 'b'], [{'a':1, 'b':2}])
     """
+    if isinstance(recods, Generator):
+        recods = [*recods]
     cols = sorted({c for record in recods for c in record.keys()})
     txt = '|'.join(cols)+'\n'
     txt += '|'.join(['---' for i in range(len(cols))])+'\n'
