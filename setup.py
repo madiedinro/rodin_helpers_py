@@ -3,7 +3,7 @@ from pathlib import Path
 
 setup(
     name='rodin_helpers',
-    version='0.1.0',
+    version='0.1.1',
     author='Dmitry Rodin',
     author_email='madiedinro@gmail.com',
     license='MIT',
