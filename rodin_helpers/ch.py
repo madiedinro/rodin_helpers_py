@@ -1,5 +1,4 @@
-from simplech import ClickHouse
-from simplech import bytes_decoder, json_decoder
+from simplech import ClickHouse, bytes_decoder, json_decoder
 from io import StringIO
 
 import pandas as pd
