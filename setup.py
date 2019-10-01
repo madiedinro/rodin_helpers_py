@@ -14,8 +14,7 @@ setup(
     url='https://github.com/madiedinro/rodin_helpers_py',
     include_package_data=True,
     install_requires=[
-        'ujson>=1.35,<2',
-        'simplech>=0.16.5'
+        'ujson>=1.35,<2'
     ],
     zip_safe=False,
     classifiers=[
